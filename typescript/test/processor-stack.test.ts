@@ -1,6 +1,6 @@
-import { Capture, Match, Template } from "@aws-cdk/assertions";
-import * as cdk from "@aws-cdk/core";
-import * as sns from "@aws-cdk/aws-sns";
+import { Capture, Match, Template } from "aws-cdk-lib/assertions";
+import * as cdk from "aws-cdk-lib";
+import * as sns from 'aws-cdk-lib/aws-sns';
 import { ProcessorStack } from "../lib/processor-stack";
 
 describe("ProcessorStack", () => {

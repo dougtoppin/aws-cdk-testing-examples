@@ -1,5 +1,5 @@
-import { Match, Template } from "@aws-cdk/assertions";
-import * as cdk from "@aws-cdk/core";
+import { Match, Template } from 'aws-cdk-lib/assertions';
+import * as cdk from "aws-cdk-lib";
 import { DeadLetterQueue } from "../lib/dead-letter-queue";
 
 describe("DeadLetterQueue", () => {
