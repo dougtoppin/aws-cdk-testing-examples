@@ -81,10 +81,13 @@ describe("ProcessorStack", () => {
               Effect: "Allow",
               Principal: {
                 Service: {
-                  "Fn::Join": [
-                    "",
-                    ["states.", Match.anyValue(), ".amazonaws.com"],
-                  ],
+                  "Fn::FindInMap": [
+                    "ServiceprincipalMap",
+                    {
+                      "Ref": "AWS::Region"
+                    },
+                    "states"
+                  ]
                 },
               },
             },

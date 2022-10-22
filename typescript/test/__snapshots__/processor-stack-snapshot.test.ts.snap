@@ -1,92 +1,147 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ProcessorStack matches the snapshot 1`] = `
-Object {
-  "Parameters": Object {
-    "AssetParameters6ce9cba0c9785156f59d00159e27431182962b409d385ab1d5f199541a970586ArtifactHash97E3F10B": Object {
-      "Description": "Artifact hash for asset \\"6ce9cba0c9785156f59d00159e27431182962b409d385ab1d5f199541a970586\\"",
-      "Type": "String",
-    },
-    "AssetParameters6ce9cba0c9785156f59d00159e27431182962b409d385ab1d5f199541a970586S3BucketE40C5F0B": Object {
-      "Description": "S3 bucket for asset \\"6ce9cba0c9785156f59d00159e27431182962b409d385ab1d5f199541a970586\\"",
-      "Type": "String",
-    },
-    "AssetParameters6ce9cba0c9785156f59d00159e27431182962b409d385ab1d5f199541a970586S3VersionKey189FBF34": Object {
-      "Description": "S3 key for asset version \\"6ce9cba0c9785156f59d00159e27431182962b409d385ab1d5f199541a970586\\"",
-      "Type": "String",
+{
+  "Mappings": {
+    "ServiceprincipalMap": {
+      "af-south-1": {
+        "states": "states.af-south-1.amazonaws.com",
+      },
+      "ap-east-1": {
+        "states": "states.ap-east-1.amazonaws.com",
+      },
+      "ap-northeast-1": {
+        "states": "states.ap-northeast-1.amazonaws.com",
+      },
+      "ap-northeast-2": {
+        "states": "states.ap-northeast-2.amazonaws.com",
+      },
+      "ap-northeast-3": {
+        "states": "states.ap-northeast-3.amazonaws.com",
+      },
+      "ap-south-1": {
+        "states": "states.ap-south-1.amazonaws.com",
+      },
+      "ap-southeast-1": {
+        "states": "states.ap-southeast-1.amazonaws.com",
+      },
+      "ap-southeast-2": {
+        "states": "states.ap-southeast-2.amazonaws.com",
+      },
+      "ap-southeast-3": {
+        "states": "states.ap-southeast-3.amazonaws.com",
+      },
+      "ca-central-1": {
+        "states": "states.ca-central-1.amazonaws.com",
+      },
+      "cn-north-1": {
+        "states": "states.cn-north-1.amazonaws.com",
+      },
+      "cn-northwest-1": {
+        "states": "states.cn-northwest-1.amazonaws.com",
+      },
+      "eu-central-1": {
+        "states": "states.eu-central-1.amazonaws.com",
+      },
+      "eu-north-1": {
+        "states": "states.eu-north-1.amazonaws.com",
+      },
+      "eu-south-1": {
+        "states": "states.eu-south-1.amazonaws.com",
+      },
+      "eu-south-2": {
+        "states": "states.eu-south-2.amazonaws.com",
+      },
+      "eu-west-1": {
+        "states": "states.eu-west-1.amazonaws.com",
+      },
+      "eu-west-2": {
+        "states": "states.eu-west-2.amazonaws.com",
+      },
+      "eu-west-3": {
+        "states": "states.eu-west-3.amazonaws.com",
+      },
+      "me-south-1": {
+        "states": "states.me-south-1.amazonaws.com",
+      },
+      "sa-east-1": {
+        "states": "states.sa-east-1.amazonaws.com",
+      },
+      "us-east-1": {
+        "states": "states.us-east-1.amazonaws.com",
+      },
+      "us-east-2": {
+        "states": "states.us-east-2.amazonaws.com",
+      },
+      "us-gov-east-1": {
+        "states": "states.us-gov-east-1.amazonaws.com",
+      },
+      "us-gov-west-1": {
+        "states": "states.us-gov-west-1.amazonaws.com",
+      },
+      "us-iso-east-1": {
+        "states": "states.amazonaws.com",
+      },
+      "us-iso-west-1": {
+        "states": "states.amazonaws.com",
+      },
+      "us-isob-east-1": {
+        "states": "states.amazonaws.com",
+      },
+      "us-west-1": {
+        "states": "states.us-west-1.amazonaws.com",
+      },
+      "us-west-2": {
+        "states": "states.us-west-2.amazonaws.com",
+      },
     },
   },
-  "Resources": Object {
-    "LambdaFunctionAllowInvokeTopicsStackTopic1A54934186CE533EE": Object {
-      "Properties": Object {
+  "Parameters": {
+    "BootstrapVersion": {
+      "Default": "/cdk-bootstrap/hnb659fds/version",
+      "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]",
+      "Type": "AWS::SSM::Parameter::Value<String>",
+    },
+  },
+  "Resources": {
+    "LambdaFunctionAllowInvokeTopicsStackTopic1A54934186CE533EE": {
+      "Properties": {
         "Action": "lambda:InvokeFunction",
-        "FunctionName": Object {
-          "Fn::GetAtt": Array [
+        "FunctionName": {
+          "Fn::GetAtt": [
             "LambdaFunctionBF21E41F",
             "Arn",
           ],
         },
         "Principal": "sns.amazonaws.com",
-        "SourceArn": Object {
+        "SourceArn": {
           "Fn::ImportValue": "TopicsStack:ExportsOutputRefTopic198E71B3E74722020",
         },
       },
       "Type": "AWS::Lambda::Permission",
     },
-    "LambdaFunctionBF21E41F": Object {
-      "DependsOn": Array [
+    "LambdaFunctionBF21E41F": {
+      "DependsOn": [
         "LambdaFunctionServiceRoleDefaultPolicy32EEEE35",
         "LambdaFunctionServiceRoleC555A460",
       ],
-      "Properties": Object {
-        "Code": Object {
-          "S3Bucket": Object {
-            "Ref": "AssetParameters6ce9cba0c9785156f59d00159e27431182962b409d385ab1d5f199541a970586S3BucketE40C5F0B",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": Object {
-            "Fn::Join": Array [
-              "",
-              Array [
-                Object {
-                  "Fn::Select": Array [
-                    0,
-                    Object {
-                      "Fn::Split": Array [
-                        "||",
-                        Object {
-                          "Ref": "AssetParameters6ce9cba0c9785156f59d00159e27431182962b409d385ab1d5f199541a970586S3VersionKey189FBF34",
-                        },
-                      ],
-                    },
-                  ],
-                },
-                Object {
-                  "Fn::Select": Array [
-                    1,
-                    Object {
-                      "Fn::Split": Array [
-                        "||",
-                        Object {
-                          "Ref": "AssetParameters6ce9cba0c9785156f59d00159e27431182962b409d385ab1d5f199541a970586S3VersionKey189FBF34",
-                        },
-                      ],
-                    },
-                  ],
-                },
-              ],
-            ],
-          },
+          "S3Key": "6ce9cba0c9785156f59d00159e27431182962b409d385ab1d5f199541a970586.zip",
         },
-        "Environment": Object {
-          "Variables": Object {
-            "STATE_MACHINE_ARN": Object {
+        "Environment": {
+          "Variables": {
+            "STATE_MACHINE_ARN": {
               "Ref": "StateMachine2E01A3A5",
             },
           },
         },
         "Handler": "handler",
-        "Role": Object {
-          "Fn::GetAtt": Array [
+        "Role": {
+          "Fn::GetAtt": [
             "LambdaFunctionServiceRoleC555A460",
             "Arn",
           ],
@@ -95,27 +150,27 @@ Object {
       },
       "Type": "AWS::Lambda::Function",
     },
-    "LambdaFunctionServiceRoleC555A460": Object {
-      "Properties": Object {
-        "AssumeRolePolicyDocument": Object {
-          "Statement": Array [
-            Object {
+    "LambdaFunctionServiceRoleC555A460": {
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
               "Action": "sts:AssumeRole",
               "Effect": "Allow",
-              "Principal": Object {
+              "Principal": {
                 "Service": "lambda.amazonaws.com",
               },
             },
           ],
           "Version": "2012-10-17",
         },
-        "ManagedPolicyArns": Array [
-          Object {
-            "Fn::Join": Array [
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
               "",
-              Array [
+              [
                 "arn:",
-                Object {
+                {
                   "Ref": "AWS::Partition",
                 },
                 ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
@@ -126,14 +181,14 @@ Object {
       },
       "Type": "AWS::IAM::Role",
     },
-    "LambdaFunctionServiceRoleDefaultPolicy32EEEE35": Object {
-      "Properties": Object {
-        "PolicyDocument": Object {
-          "Statement": Array [
-            Object {
+    "LambdaFunctionServiceRoleDefaultPolicy32EEEE35": {
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
               "Action": "states:StartExecution",
               "Effect": "Allow",
-              "Resource": Object {
+              "Resource": {
                 "Ref": "StateMachine2E01A3A5",
               },
             },
@@ -141,37 +196,37 @@ Object {
           "Version": "2012-10-17",
         },
         "PolicyName": "LambdaFunctionServiceRoleDefaultPolicy32EEEE35",
-        "Roles": Array [
-          Object {
+        "Roles": [
+          {
             "Ref": "LambdaFunctionServiceRoleC555A460",
           },
         ],
       },
       "Type": "AWS::IAM::Policy",
     },
-    "LambdaFunctionTopic1461E184C": Object {
-      "Properties": Object {
-        "Endpoint": Object {
-          "Fn::GetAtt": Array [
+    "LambdaFunctionTopic1461E184C": {
+      "Properties": {
+        "Endpoint": {
+          "Fn::GetAtt": [
             "LambdaFunctionBF21E41F",
             "Arn",
           ],
         },
         "Protocol": "lambda",
-        "TopicArn": Object {
+        "TopicArn": {
           "Fn::ImportValue": "TopicsStack:ExportsOutputRefTopic198E71B3E74722020",
         },
       },
       "Type": "AWS::SNS::Subscription",
     },
-    "StateMachine2E01A3A5": Object {
-      "DependsOn": Array [
+    "StateMachine2E01A3A5": {
+      "DependsOn": [
         "StateMachineRoleB840431D",
       ],
-      "Properties": Object {
-        "DefinitionString": "{\\"StartAt\\":\\"StartState\\",\\"States\\":{\\"StartState\\":{\\"Type\\":\\"Pass\\",\\"End\\":true}}}",
-        "RoleArn": Object {
-          "Fn::GetAtt": Array [
+      "Properties": {
+        "DefinitionString": "{"StartAt":"StartState","States":{"StartState":{"Type":"Pass","End":true}}}",
+        "RoleArn": {
+          "Fn::GetAtt": [
             "StateMachineRoleB840431D",
             "Arn",
           ],
@@ -179,24 +234,21 @@ Object {
       },
       "Type": "AWS::StepFunctions::StateMachine",
     },
-    "StateMachineRoleB840431D": Object {
-      "Properties": Object {
-        "AssumeRolePolicyDocument": Object {
-          "Statement": Array [
-            Object {
+    "StateMachineRoleB840431D": {
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
               "Action": "sts:AssumeRole",
               "Effect": "Allow",
-              "Principal": Object {
-                "Service": Object {
-                  "Fn::Join": Array [
-                    "",
-                    Array [
-                      "states.",
-                      Object {
-                        "Ref": "AWS::Region",
-                      },
-                      ".amazonaws.com",
-                    ],
+              "Principal": {
+                "Service": {
+                  "Fn::FindInMap": [
+                    "ServiceprincipalMap",
+                    {
+                      "Ref": "AWS::Region",
+                    },
+                    "states",
                   ],
                 },
               },
@@ -206,6 +258,33 @@ Object {
         },
       },
       "Type": "AWS::IAM::Role",
+    },
+  },
+  "Rules": {
+    "CheckBootstrapVersion": {
+      "Assertions": [
+        {
+          "Assert": {
+            "Fn::Not": [
+              {
+                "Fn::Contains": [
+                  [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                  ],
+                  {
+                    "Ref": "BootstrapVersion",
+                  },
+                ],
+              },
+            ],
+          },
+          "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI.",
+        },
+      ],
     },
   },
 }
